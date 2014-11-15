@@ -21,7 +21,7 @@ describe 'rails.extend', ->
           name: "book"
           extensions: ["attribute"]
         )
-        
+
         book = new Book {
           id: 1, $key: '1234', name: 'The Winds of Winter', author: 'William Petra'
         }
