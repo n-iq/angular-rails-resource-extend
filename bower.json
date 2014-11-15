@@ -1,11 +1,11 @@
 {
-    "name": "angular-rails-resources-extend",
+    "name": "angular-rails-resource-extend",
     "version": "0.0.0",
     "authors": [
         "Everett Qin <everett.qyf@gmail.com>"
     ],
-    "description": "a set of extend for angular-rails-resources-extend",
-    "main": "dist/angular-rails-resources-extend.min.js",
+    "description": "a set of extend for angular-rails-resource-extend",
+    "main": "dist/angular-rails-resource-extend.min.js",
     "keywords": [
         "angularjs"
     ],
