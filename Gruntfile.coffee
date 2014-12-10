@@ -42,7 +42,8 @@ module.exports = (grunt) ->
         expand: true
         cwd: 'src'
         src: ['module.coffee'
-              'extensions/*.coffee']
+              'extensions/*.coffee'
+              'extensions/{,*/}{,*/}*.coffee']
         dest: '.tmp'
         ext: '.js'
       demo:
@@ -68,7 +69,8 @@ module.exports = (grunt) ->
         separator: ';'
       dist:
         src: ['.tmp/module.js'
-              '.tmp/extensions/*.js']
+              '.tmp/extensions/*.js'
+              '.tmp/extensions/{,*/}{,*/}*.js']
         dest: 'dist/angular-rails-resource-extend.js'
 
     ngAnnotate:
