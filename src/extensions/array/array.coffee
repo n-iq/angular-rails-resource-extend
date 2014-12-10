@@ -5,7 +5,6 @@ angular.module("rails.extend").factory "RailsResourceArrayMixin", (RailsResource
   RailsResourceArrayMixin.extended = (Resource) ->
     Resource.intercept "response", (result, resource, context) ->
       if angular.isArray(result.data) and angular.isDefined(result.originalData.meta)
-        result.data.$count = result.originalData.meta.count
         result.data.$total = result.originalData.meta.total
         result.data.$page = result.originalData.meta.page
         result.data.$remoteBusy = false  if result.data.$remoteBusy is `undefined`
