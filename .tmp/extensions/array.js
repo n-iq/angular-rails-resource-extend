@@ -1,9 +1,5 @@
 (function() {
-  angular.module('rails.extend', ['rails.extend.extensions']);
-
-}).call(this);
-;(function() {
-  angular.module('rails.extend').factory('RailsResourceArrayMixin', ['RailsResourceInjector', function(RailsResourceInjector) {
+  angular.module('rails.extend').factory('RailsResourceArrayMixin', function(RailsResourceInjector) {
     var RailsResourceArrayMixin;
     RailsResourceArrayMixin = function() {};
     RailsResourceArrayMixin.extended = function(Resource) {
@@ -69,47 +65,6 @@
       });
     };
     return RailsResourceArrayMixin;
-  }]);
-
-}).call(this);
-;(function() {
-  angular.module('rails.extend').factory('RailsResourceFilterMixin', ['RailsResourceInjector', '$q', '$rootScope', function(RailsResourceInjector, $q, $rootScope) {
-    var RailsResourceFlashMixin;
-    RailsResourceFlashMixin = function() {};
-    RailsResourceFlashMixin.extended = function(Resource) {
-      Resource.intercept('response', function(result) {
-        if (result.originalData.filters) {
-          $rootScope.filters = result.originalData.filters;
-        }
-        return result;
-      });
-      return Resource.intercept('responseError', function(rejection) {
-        return $q.reject(rejection);
-      });
-    };
-    return RailsResourceFlashMixin;
-  }]);
-
-}).call(this);
-;(function() {
-  angular.module('rails.extend').factory('RailsResourcePermissionMixin', function() {
-    var RailsResourcePermissionMixin;
-    RailsResourcePermissionMixin = function() {};
-    RailsResourcePermissionMixin.extended = function(Resource) {
-      return Resource.intercept('response', function(result, resource, context) {
-        if (!((result.originalData.meta != null) && (result.originalData.meta.permissions != null))) {
-          return;
-        }
-        if (angular.isArray(result.data)) {
-
-        } else {
-          console.log('asdf', result.originalData.meta);
-          result.data.$permissions = result.originalData.meta.permissions;
-        }
-        return result;
-      });
-    };
-    return RailsResourcePermissionMixin;
   });
 
 }).call(this);

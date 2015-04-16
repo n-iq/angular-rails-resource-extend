@@ -98,17 +98,6 @@ module.exports = (grunt) ->
         files: ["demo/index.jade"]
         tasks: ["jade"]
 
-    html2js:
-      options:
-        base: '.'
-        module: 'easy.form.templates'
-        rename: (modulePath) ->
-          moduleName = modulePath.replace('src/', '').replace('.html', '');
-          return 'easy-form' + '/' + moduleName + '.html'
-      default:
-        src: ['src/templates/**/*.html']
-        dest: 'src/templates/templates.js'
-
     connect:
       options:
         protocol: 'http'
@@ -171,7 +160,6 @@ module.exports = (grunt) ->
     'clean:dev'
     'wiredep'
     'coffee'
-    'html2js'
     'jade'
     'concat'
     'ngAnnotate'
