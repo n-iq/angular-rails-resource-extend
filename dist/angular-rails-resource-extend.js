@@ -1,5 +1,5 @@
 (function() {
-  angular.module('rails.extend');
+  angular.module('rails.extend', ['rails']);
 
 }).call(this);
 ;(function() {
