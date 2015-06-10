@@ -1,4 +1,2 @@
-angular.module 'rails.extend', [
-  'rails.extend.extensions'
-]
+angular.module 'rails.extend'
 
